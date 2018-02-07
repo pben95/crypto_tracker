@@ -2,6 +2,7 @@ import json, urllib, threading
 from Tkinter import *
 master = Tk()
 master.resizable(width=False, height=False)
+master.geometry('480x320')
 images = [PhotoImage(file='bitcoin.png'),
           PhotoImage(file='ethereum.png'),
           PhotoImage(file='neo.png'),
