@@ -1,4 +1,4 @@
-import json, urllib, threading
+import json, urllib2, threading
 from Tkinter import *
 master = Tk()
 master.resizable(width=False, height=False)
@@ -18,7 +18,7 @@ def APIupdate():
     threading.Timer(306.0, APIupdate).start()
     print('update!')
     for j, i in enumerate(coins):
-        with urllib.urlopen(i) as url:
+        with urllib2.urlopen(i) as url:
             r = json.loads(url)
             info = ("$" + r[0]["price_usd"] + " | " + r[0]["price_btc"] + " BTC \n1H " + r[0][
                 "percent_change_1h"] + " | 24H " + r[0]["percent_change_24h"])
